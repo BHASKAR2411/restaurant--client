@@ -1,0 +1,301 @@
+.home-container {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.home-content {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.restaurant-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.restaurant-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #28a745;
+}
+
+.restaurant-logo-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #28a745;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #0a1744;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.card-link {
+  color: #4285f4;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.action-card {
+  background-color: #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.action-button {
+  background-color: #0a1744;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #152a6e;
+}
+
+.hindi-char {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  color: #4285f4;
+}
+
+.globe-icon {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.benefits-list,
+.features-list {
+  text-align: left;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  color: #555;
+}
+
+.benefits-list li,
+.features-list li {
+  margin-bottom: 0.5rem;
+}
+
+.missing-features {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.missing-features h4 {
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.table-badge {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: #4285f4;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  z-index: 1000;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
+  text-align: center;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    padding: 1rem;
+  }
+
+  .restaurant-logo,
+  .restaurant-logo-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.85rem;
+  }
+
+  .action-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .table-badge {
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content {
+    padding: 0.5rem;
+  }
+
+  .restaurant-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .restaurant-logo,
+  .restaurant-logo-placeholder {
+    width: 50px;
+    height: 50px;
+  }
+
+  .home-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.2rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .action-card {
+    padding: 1rem;
+  }
+
+  .action-button {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .benefits-list,
+  .features-list {
+    font-size: 0.9rem;
+  }
+
+  .table-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .feature-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
