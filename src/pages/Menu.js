@@ -186,6 +186,9 @@ const Menu = () => {
             <button onClick={handleSubmit}>Submit Order</button>
           </div>
         )}
+        <footer className="page-footer">
+          Powered by SAE. All rights reserved.
+        </footer>
       </div>
     </div>
   )

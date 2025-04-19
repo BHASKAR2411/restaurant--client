@@ -99,6 +99,9 @@ const Review = () => {
             Submit Review
           </button>
         </div>
+        <footer className="page-footer">
+          Powered by SAE. All rights reserved.
+        </footer>
       </div>
     </div>
   )

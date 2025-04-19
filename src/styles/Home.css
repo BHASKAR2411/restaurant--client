@@ -1,6 +1,7 @@
 .home-container {
   min-height: 100vh;
-  background-color: #f4f4f4;
+  background: url('../assets/header5.png') no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -298,4 +299,12 @@
   .feature-cards {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.page-footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: #34495e;
+  font-size: 0.9rem;
+  margin-top: auto;
 }

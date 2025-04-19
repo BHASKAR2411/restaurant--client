@@ -96,6 +96,9 @@ const Home = () => {
             <div className="card-link">Write Review →</div>
           </div>
         </div>
+        <footer className="page-footer">
+          Powered by SAE. All rights reserved.
+        </footer>
 
         {tableNo && <div className="table-badge">Table {tableNo}</div>}
       </div>

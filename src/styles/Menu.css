@@ -1,6 +1,7 @@
 .menu-container {
   min-height: 100vh;
-  background-color: #f4f4f4;
+  background: url('../assets/header5.png') no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
 }
@@ -280,4 +281,12 @@
     padding: 0.3rem 0.6rem;
     font-size: 0.8rem;
   }
+}
+
+.page-footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: #34495e;
+  font-size: 0.9rem;
+  margin-top: auto;
 }

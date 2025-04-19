@@ -81,6 +81,9 @@ const Payment = () => {
           />
           <button onClick={handleSubmit}>Pay Now</button>
         </div>
+        <footer className="page-footer">
+          Powered by SAE. All rights reserved.
+        </footer>
       </div>
     </div>
   )
