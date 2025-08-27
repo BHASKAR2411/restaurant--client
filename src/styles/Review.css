@@ -1,24 +1,31 @@
+/* client-frontend/src/styles/Review.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .review-container {
   min-height: 100vh;
-  background: url('../assets/header5.png') no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/header5.png') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
 }
 
 .review-header {
-  background-color: #0a1744;
+  background: linear-gradient(90deg, #0a1744, #1d4999);
   color: white;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .review-header h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .back-button {
@@ -27,123 +34,158 @@
   background: none;
   border: none;
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.back-button:hover {
+  transform: scale(1.2);
+}
+
+.table-indicator {
+  background: #4285f4;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.5rem auto;
+  max-width: 150px;
 }
 
 .review-content {
   flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .review-card {
-  background-color: white;
-  border-radius: 8px;
-  padding: 2rem;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  animation: fadeIn 0.3s ease-in;
 }
 
 .review-card h3 {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: #333;
   font-size: 1.3rem;
+  color: #0a1744;
+  margin: 0 0 1rem;
   text-align: center;
 }
 
 .stars {
-  margin: 0 0 1.5rem;
   display: flex;
   gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .star {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
+  color: #ccc;
   cursor: pointer;
-  color: #ddd;
   transition: color 0.2s;
 }
 
 .star.active {
-  color: #4285f4;
+  color: #f1c40f;
 }
 
-.review-content textarea {
+.star:hover {
+  color: #f39c12;
+}
+
+.review-card textarea {
   width: 100%;
-  height: 120px;
-  margin-bottom: 1.5rem;
-  padding: 0.75rem;
+  max-width: 400px;
+  padding: 0.6rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
   resize: vertical;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.review-content textarea:focus {
+.review-card textarea:focus {
   outline: none;
   border-color: #4285f4;
   box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
 }
 
-.review-content button {
-  padding: 0.75rem 1.5rem;
+.review-card button,
+.review-card .next-button {
+  padding: 0.75rem 2rem;
   background: #0a1744;
   color: white;
   border: none;
   border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  max-width: 300px;
   width: 100%;
-  max-width: 250px;
-  transition: background-color 0.2s;
+  margin-top: 0.5rem;
 }
 
-.review-content button:hover {
+.review-card button:hover,
+.review-card .next-button:hover {
   background: #152a6e;
+  transform: scale(1.05);
 }
 
-.table-badge {
-  position: absolute;
-  right: 1rem;
+.next-button {
   background: #4285f4;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+}
+
+.next-button:hover {
+  background: #3367d6;
 }
 
 .error-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
   color: #721c24;
   background-color: #f8d7da;
-  border-radius: 8px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+
+.page-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #34495e;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
   .review-content {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .review-header h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .review-card {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .review-card h3 {
@@ -151,70 +193,64 @@
   }
 
   .star {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
-  .review-content textarea {
-    height: 100px;
+  .review-card textarea {
+    max-width: 100%;
     font-size: 0.9rem;
   }
 
-  .review-content button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+  .review-card button,
+  .review-card .next-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .review-content {
-    padding: 1rem;
+    padding: 0.75rem;
   }
 
   .review-header h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .back-button {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .table-indicator {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
   }
 
   .review-card {
-    padding: 1rem;
+    padding: 0.75rem;
   }
 
   .review-card h3 {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .star {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .stars {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
-  .review-content textarea {
-    height: 80px;
+  .review-card textarea {
     font-size: 0.85rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
-  .review-content button {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+  .review-card button,
+  .review-card .next-button {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
   }
-
-  .table-badge {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.8rem;
-  }
-}
-.page-footer {
-  text-align: center;
-  padding: 1rem 0;
-  color: #34495e;
-  font-size: 0.9rem;
-  margin-top: auto;
 }

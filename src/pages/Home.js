@@ -1,3 +1,4 @@
+// client-frontend/src/pages/Home.js
 "use client"
 
 import { useEffect, useState } from "react"
@@ -59,6 +60,10 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      <div className="home-header">
+        <h1>{restaurant.restaurantName}</h1>
+      </div>
+      {tableNo && <div className="table-indicator">Table {tableNo}</div>}
       <div className="home-content">
         <div className="restaurant-header">
           {restaurant.profilePicture ? (
@@ -72,35 +77,21 @@ const Home = () => {
               {restaurant.restaurantName[0]}
             </div>
           )}
-          <h1>{restaurant.restaurantName}</h1>
         </div>
-
-        <h2 className="tagline">Welcome to our restaurant!!</h2>
-
         <div className="feature-cards">
-          <div className="feature-card" onClick={() => navigateTo("/menu")}>
+          <button className="feature-card" onClick={() => navigateTo("/menu")}>
             <h3>Browse Menu</h3>
-            <p>Explore our delicious food and drink options</p>
-            <div className="card-link">View Menu →</div>
-          </div>
-
-          <div className="feature-card" onClick={() => navigateTo("/payment")}>
+          </button>
+          <button className="feature-card" onClick={() => navigateTo("/payment")}>
             <h3>Pay Bill</h3>
-            <p>Quickly pay your bill using our secure payment system</p>
-            <div className="card-link">Pay Now →</div>
-          </div>
-
-          <div className="feature-card" onClick={() => navigateTo("/review")}>
+          </button>
+          <button className="feature-card" onClick={() => navigateTo("/review")}>
             <h3>Leave Review</h3>
-            <p>Share your experience with us and other customers</p>
-            <div className="card-link">Write Review →</div>
-          </div>
+          </button>
         </div>
         <footer className="page-footer">
           Powered by SAE. All rights reserved.
         </footer>
-
-        {tableNo && <div className="table-badge">Table {tableNo}</div>}
       </div>
     </div>
   )

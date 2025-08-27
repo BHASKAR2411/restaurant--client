@@ -1,3 +1,4 @@
+// client-frontend/src/pages/Payment.js
 "use client"
 
 import { useState, useEffect } from "react"
@@ -59,15 +60,13 @@ const Payment = () => {
   return (
     <div className="payment-container">
       {loading && <LoadingSpinner />}
-
       <div className="payment-header">
         <button className="back-button" onClick={navigateToHome}>
           ← Back
         </button>
         <h2>Pay Your Bill</h2>
-        {tableNo && <div className="table-badge">Table {tableNo}</div>}
       </div>
-
+      {tableNo && <div className="table-indicator">Table {tableNo}</div>}
       <div className="payment-content">
         <div className="payment-card">
           <div className="payment-icon">₹</div>

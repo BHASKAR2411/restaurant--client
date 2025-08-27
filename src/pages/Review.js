@@ -1,3 +1,4 @@
+// client-frontend/src/pages/Review.js
 "use client"
 
 import { useState, useEffect } from "react"
@@ -59,6 +60,19 @@ const Review = () => {
     setLoading(false)
   }
 
+  const handleNext = () => {
+    if (stars === 0) {
+      toast.warn("Please select a rating")
+      return
+    }
+    if (googleReviewLink) {
+      window.location.href = googleReviewLink
+    } else {
+      toast.success("Review submitted")
+      setStars(0)
+    }
+  }
+
   const navigateToHome = () => {
     window.location.href = `/?table=${tableNo}&restaurant=${restaurantId}`
   }
@@ -67,18 +81,20 @@ const Review = () => {
     return <div className="error-container">Error: Invalid table or restaurant</div>
   }
 
+  const isLowRating = stars > 0 && stars <= 3
+  const isHighRating = stars >= 4
+  const showCommentBox = isLowRating || (isHighRating && !googleReviewLink)
+
   return (
     <div className="review-container">
       {loading && <LoadingSpinner />}
-
       <div className="review-header">
         <button className="back-button" onClick={navigateToHome}>
           ← Back
         </button>
         <h2>Share Your Opinion</h2>
-        {tableNo && <div className="table-badge">Table {tableNo}</div>}
       </div>
-
+      {tableNo && <div className="table-indicator">Table {tableNo}</div>}
       <div className="review-content">
         <div className="review-card">
           <h3>How was your experience?</h3>
@@ -89,15 +105,24 @@ const Review = () => {
               </span>
             ))}
           </div>
-          <textarea
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-            placeholder="Write your genuine opinion (optional)"
-            rows="4"
-          />
-          <button type="button" onClick={handleSubmit}>
-            Submit Review
-          </button>
+          {showCommentBox && (
+            <>
+              <textarea
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                placeholder="Please share your feedback to help us improve (optional)"
+                rows="4"
+              />
+              <button type="button" onClick={handleSubmit}>
+                Submit Review
+              </button>
+            </>
+          )}
+          {isHighRating && googleReviewLink && (
+            <button type="button" className="next-button" onClick={handleNext}>
+              Next
+            </button>
+          )}
         </div>
         <footer className="page-footer">
           Powered by SAE. All rights reserved.
