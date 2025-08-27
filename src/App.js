@@ -9,7 +9,7 @@ import './styles/App.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router baseline ="/app">
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
